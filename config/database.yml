@@ -1,0 +1,10 @@
+development:
+  adapter: postgresql
+  database: employee_division_development
+  template: template0
+
+test:
+  adapter: postgresql
+  database: employee_division_test
+  template: template0
+  
