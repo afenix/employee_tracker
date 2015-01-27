@@ -1,0 +1,15 @@
+<h1>Welcome divine boss...how would you care to dictate today?</h1>
+
+<h3>Create a new division for your glorious team of subservient staff</h3>
+
+<form action="/division" method="post">
+  <label for="name">Division Name</label>
+  <input id="name" name="name" type="text">
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<ul><% @divisions.each() do |division| %>
+    <li><a href="/division/ <%= division.id() %>"> <%= division.name() %> </a></li>
+    <% end %>
+</ul>

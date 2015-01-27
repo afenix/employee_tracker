@@ -1,0 +1,26 @@
+<h1>Welcome to <%= @division.name() %></h1>
+
+<h3>Enter the next slave . . . er, staff for this Division.</h3>
+
+<form action="/employee" method="post">
+  <input id="division_id" name="division_id" type="hidden" value="<%= @division.id() %>">
+  <label for="name">Employee Name</label>
+  <input id="name" name="name" type="text">
+
+  <button type="submit" class="btn btn-danger">Submit</button>
+</form>
+
+<% if @division.employees().any?() %>
+<h3>Below is a list of your slaves . . . er, your staff.</h3>
+
+<ul>
+  <% @division.employees().each() do |employee| %>
+    <li> <%= employee.name() %> </a></li>
+  <% end %>
+</ul>
+
+<% else %>
+  <p> The economy is begging you to hire someone.  Do it.</p>
+<% end %>
+
+<a href="/">Back to Home Page</a>
